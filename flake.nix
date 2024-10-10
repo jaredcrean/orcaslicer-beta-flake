@@ -48,7 +48,12 @@
           at-spi2-atk
           at-spi2-core
           webkitgtk
+          cacert
         ];
+
+        extraEnv = {
+          SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
+        };
 
         meta = with pkgs.lib; {
           description = "Orca Slicer 3D printer software";
