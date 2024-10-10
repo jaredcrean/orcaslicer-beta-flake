@@ -1,4 +1,8 @@
-# Build and Install
+# Build Orca-Slicer from appimage and install on Nix.
+
+---
+
+## Build and Install
 
 ```
 nix build .#orcaslicer
