@@ -25,6 +25,7 @@
           glib
           gtkmm3
           glibmm
+	  glibcLocales
           cairo
           cairomm
           gdk-pixbuf
@@ -53,6 +54,7 @@
 
         extraEnv = {
           SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
+          SSL_CERT_DIR = "${pkgs.cacert}/etc/ssl/certs";
         };
 
         meta = with pkgs.lib; {
