@@ -34,7 +34,6 @@
           glib
           glib-networking
           gmp
-          gstreamer
           gst-plugins-base
           gst-plugins-bad
           gtest
