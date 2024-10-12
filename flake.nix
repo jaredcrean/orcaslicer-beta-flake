@@ -12,6 +12,7 @@
     in
     rec {
       packages.${system}.orcaslicer = pkgs.appimageTools.wrapType2 {
+        inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad;
         name = "orcaslicer";
         src = pkgs.fetchurl {
           url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
@@ -29,11 +30,14 @@
           cairo
           cairomm
           gdk-pixbuf
-	  glew-egl
+	  glew
           glfw
           glib
           glib-networking
           gmp
+	  libavif
+	  gmp
+	  gst_all_1
 	  gst_all_1.gstreamer
 	  gst_all_1.gst-libav
 	  gst_all_1.gst-plugins-base
