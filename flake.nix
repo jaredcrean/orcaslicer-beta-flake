@@ -29,9 +29,20 @@
           cairo
           cairomm
           gdk-pixbuf
-	  gst_all_1.gstreamer
-	  gst_all_1.gst-plugins-bad
-	  gst_all_1.gst-libav
+	  glew-egl
+          glfw
+          glib
+          glib-networking
+          gmp
+          gstreamer
+          gst-plugins-base
+          gst-plugins-bad
+          gtest
+          gtk3
+          hicolor-icon-theme
+          ilmbase
+          libpng
+          mesa
           #          libX11
           #          libXext
           #          libXinerama
