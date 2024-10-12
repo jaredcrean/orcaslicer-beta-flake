@@ -29,6 +29,7 @@
           cairo
           cairomm
           gdk-pixbuf
+	  gst_all_1.gstreamer
           #          libX11
           #          libXext
           #          libXinerama
