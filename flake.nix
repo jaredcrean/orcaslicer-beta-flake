@@ -34,24 +34,15 @@
           glib
           glib-networking
           gmp
-          gst-plugins-base
-          gst-plugins-bad
+	  gst_all_1.gst-plugins-base
+	  gst_all_1.gst-plugins-bad
+	  gst_all_1.gst-plugins-ugly
+	  gst_all_1.gst-plugins-good
           gtest
           gtk3
           hicolor-icon-theme
           ilmbase
           libpng
-          mesa
-          #          libX11
-          #          libXext
-          #          libXinerama
-          #          libXrandr
-          #          libXcursor
-          #          libXdamage
-          #          libXcomposite
-          #          libXfixes
-          #          libXi
-          #          libXtst
           fontconfig
           freetype
           libpng
