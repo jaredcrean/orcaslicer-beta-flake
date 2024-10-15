@@ -12,8 +12,8 @@
     in
     rec {
       packages.${system}.orcaslicer = pkgs.appimageTools.wrapType2 {
-        inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad;
-        name = "orcaslicer";
+        inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad gst-plugins-good gst-libav gst-plugins-ugly;
+        name = "orca-slicer";
         src = pkgs.fetchurl {
           url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
           sha256 = "sha256-cZbX2SVznoYqap6EW4SEGzGbp4ZUAytZMtN6juqW6fw="; # Replace with actual hash
@@ -26,24 +26,24 @@
           glib
           gtkmm3
           glibmm
-	  glibcLocales
+          glibcLocales
           cairo
           cairomm
           gdk-pixbuf
-	  glew
+          glew
           glfw
           glib
           glib-networking
           gmp
-	  libavif
-	  gmp
-	  gst_all_1
-	  gst_all_1.gstreamer
-	  gst_all_1.gst-libav
-	  gst_all_1.gst-plugins-base
-	  gst_all_1.gst-plugins-bad
-	  gst_all_1.gst-plugins-ugly
-	  gst_all_1.gst-plugins-good
+          libavif
+          gmp
+          gst_all_1
+          gst_all_1.gstreamer
+          gst_all_1.gst-libav
+          gst_all_1.gst-plugins-base
+          gst_all_1.gst-plugins-bad
+          gst_all_1.gst-plugins-ugly
+          gst_all_1.gst-plugins-good
           gtest
           gtk3
           hicolor-icon-theme
