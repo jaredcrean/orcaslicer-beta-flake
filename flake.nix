@@ -79,5 +79,5 @@
             platforms = platforms.linux;
           };
         };
-      )};
+      });
 }
