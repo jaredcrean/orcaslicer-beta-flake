@@ -36,6 +36,7 @@
           gmp
           libavif
           gmp
+	  glib-networking
           gst_all_1
           gst_all_1.gstreamer
           gst_all_1.gst-libav
