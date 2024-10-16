@@ -9,22 +9,22 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        system = "x86_64-linux";
+        # Remove the redefinition of 'system'
         pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true; 
-	};
-
+          config = {
+            allowUnfree = true;
+          };
+        };
       in rec {
         packages.${system}.orca-slicer-beta = pkgs.appimageTools.wrapType2 {
-          inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad gst-plugins-good gst-libav gst-plugins-ugly;
           name = "orca-slicer-beta";
           src = pkgs.fetchurl {
             url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
             sha256 = "sha256-cZbX2SVznoYqap6EW4SEGzGbp4ZUAytZMtN6juqW6fw="; # Replace with actual hash
           };
 
-          extraPkgs = pkgs: with pkgs; [
+          extraPkgs = ps: with ps; [
             glibc
             zlib
             gtk3
@@ -37,12 +37,10 @@
             gdk-pixbuf
             glew
             glfw
-            glib
             gmp
             libavif
-            gmp
             glib-networking
-            gst_all_1
+            # Use the gst_all_1 package set
             gst_all_1.gstreamer
             gst_all_1.gst-libav
             gst_all_1.gst-plugins-base
@@ -53,12 +51,9 @@
             gtk3
             hicolor-icon-theme
             ilmbase
-            libpng
             fontconfig
             freetype
             libpng
-            #          libxcb
-            #          libxkbcommon
             mesa
             dbus
             at-spi2-atk
