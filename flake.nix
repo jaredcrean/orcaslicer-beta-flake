@@ -3,9 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { self, nixpkgs }:
+    flake-utils.lib.eachDefaultSystem (system:
     let
       system = "x86_64-linux";
 #      pkgs = import nixpkgs { inherit system; };
