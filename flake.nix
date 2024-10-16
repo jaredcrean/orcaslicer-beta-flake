@@ -9,6 +9,7 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
+        # Remove the redefinition of 'system'
         pkgs = import nixpkgs {
           inherit system;
           config = {
@@ -39,6 +40,7 @@
             gmp
             libavif
             glib-networking
+            # Use the gst_all_1 package set
             gst_all_1.gstreamer
             gst_all_1.gst-libav
             gst_all_1.gst-plugins-base
@@ -72,10 +74,6 @@
             platforms = platforms.linux;
           };
         };
-
-        # Expose this package as the default package
-        defaultPackage.${system} = packages.${system}.orca-slicer-beta;
-      }
-    );
+      });
 }
 
