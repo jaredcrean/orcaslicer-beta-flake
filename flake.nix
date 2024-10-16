@@ -12,8 +12,8 @@
     in
     rec {
       packages.${system}.orcaslicer = pkgs.appimageTools.wrapType2 {
-        inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad gst-plugins-good gst-libav gst-plugins-ugly;
-        name = "orca-slicer";
+        inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad gst-plugins-good gst-libav gst-plugins-ugly glib-networking;
+        name = "orca-slicer-beta";
         src = pkgs.fetchurl {
           url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
           sha256 = "sha256-cZbX2SVznoYqap6EW4SEGzGbp4ZUAytZMtN6juqW6fw="; # Replace with actual hash
