@@ -9,12 +9,17 @@
     let
       system = "x86_64-linux";
 #      pkgs = import nixpkgs { inherit system; };
-      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+      # Import nixpkgs with allowUnfree = true
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
 
     in
     rec {
       packages.${system}.orcaslicer = pkgs.appimageTools.wrapType2 {
-        inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad gst-plugins-good gst-libav gst-plugins-ugly glib-networking;
+        inherit (pkgs.gst_all_1) gstreamer gst-plugins-base gst-plugins-bad gst-plugins-good gst-libav gst-plugins-ugly;
         name = "orca-slicer-beta";
         src = pkgs.fetchurl {
           url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
