@@ -17,7 +17,7 @@
           };
         };
       in rec {
-        packages.${system}.orca-slicer-beta = pkgs.appimageTools.wrapType2 {
+        packages.x86_64-linux.orca-slicer-beta = pkgs.appimageTools.wrapType2 {
           name = "orca-slicer-beta";
           src = pkgs.fetchurl {
             url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
