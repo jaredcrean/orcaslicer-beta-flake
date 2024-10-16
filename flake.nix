@@ -3,21 +3,20 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        # Remove the redefinition of 'system'
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
+  outputs = { self, nixpkgs }: 
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
         };
-      in rec {
-        packages.x86_64-linux.orca-slicer-beta = pkgs.appimageTools.wrapType2 {
+      };
+    in {
+      packages = {
+        x86_64-linux = pkgs.appimageTools.wrapType2 {
           name = "orca-slicer-beta";
           src = pkgs.fetchurl {
             url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
@@ -40,7 +39,6 @@
             gmp
             libavif
             glib-networking
-            # Use the gst_all_1 package set
             gst_all_1.gstreamer
             gst_all_1.gst-libav
             gst_all_1.gst-plugins-base
@@ -74,7 +72,9 @@
             platforms = platforms.linux;
           };
         };
-        defaultPackage.x86_64-linux = packages.x86_64-linux.orca-slicer-beta;
-      });
+      };
+
+      defaultPackage.x86_64-linux = self.packages.x86_64-linux;
+    };
 }
 
