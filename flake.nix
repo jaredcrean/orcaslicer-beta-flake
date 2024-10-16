@@ -74,6 +74,7 @@
             platforms = platforms.linux;
           };
         };
+        defaultPackage.${system} = packages.${system}.orca-slicer-beta;
       });
 }
 
