@@ -19,7 +19,7 @@
           sha256 = "sha256-cZbX2SVznoYqap6EW4SEGzGbp4ZUAytZMtN6juqW6fw="; # Replace with actual hash
         };
 
-        extraPkgs = ps: with ps; [
+        extraPkgs = pkgs: with pkgs; [
           glibc
           zlib
           gtk3
