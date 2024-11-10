@@ -33,7 +33,8 @@
             gst_all_1.gst-plugins-base
             gst_all_1.gst-plugins-good
 	    gst_all_1.gstreamer
-            webkitgtk
+            #webkitgtk
+	    webkitgtk_6_0
 	    wxGTK32
           ];
 #	  system.replaceRuntimeDependencies = [
