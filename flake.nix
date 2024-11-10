@@ -35,6 +35,7 @@
 	    gst_all_1.gstreamer
             #webkitgtk
 	    webkitgtk_6_0
+	    webkitgtk_4_0
 	    wxGTK32
           ];
 #	  system.replaceRuntimeDependencies = [
