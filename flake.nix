@@ -17,10 +17,11 @@
     in {
       packages = {
         x86_64-linux = pkgs.appimageTools.wrapType2 {
-          name = "orca-slicer-beta";
+          name = "orca-slicer";
           src = pkgs.fetchurl {
-            url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0-rc/OrcaSlicer_Linux_V2.2.0-rc.AppImage";
-            sha256 = "sha256-cZbX2SVznoYqap6EW4SEGzGbp4ZUAytZMtN6juqW6fw="; # Replace with actual hash
+            url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0/OrcaSlicer_Linux_V2.2.0.AppImage";
+            #sha256 = "sha256-h+cHWhrp894KEbb3ic2N4fNTn13WlOSYoMsaof0RvRI="; # Replace with actual hash
+            sha256 = "sha256-3uqA3PXTrrOE0l8ziRAtmQ07gBFB+1Zx3S6JhmOPrZ8="; # Replace with actual hash
           };
 
           extraPkgs = ps: with ps; [
