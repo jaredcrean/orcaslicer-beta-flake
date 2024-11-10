@@ -54,12 +54,17 @@
             freetype
             libpng
             mesa
+	    mesa.drivers
             dbus
             at-spi2-atk
             at-spi2-core
             webkitgtk
             cacert
           ];
+#	  system.replaceRuntimeDependencies = [
+#            ({ original = pkgs.mesa; replacement = unstable.mesa; })
+#            ({ original = pkgs.mesa.drivers; replacement = mesa.drivers; })
+#          ];
 
           extraEnv = {
             SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
