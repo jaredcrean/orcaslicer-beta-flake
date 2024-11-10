@@ -26,6 +26,7 @@
 
           extraPkgs = ps: with ps; [
             glibc
+	    curl
             zlib
             gtk3
             glib
@@ -65,6 +66,10 @@
 #            ({ original = pkgs.mesa; replacement = unstable.mesa; })
 #            ({ original = pkgs.mesa.drivers; replacement = mesa.drivers; })
 #          ];
+          profile = ''
+            export SSL_CERT_FILE="${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+            export GIO_MODULE_DIR="${pkgs.glib-networking}/lib/gio/modules/"
+          '';
 
           extraEnv = {
             SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
