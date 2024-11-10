@@ -25,42 +25,14 @@
           };
 
           extraPkgs = ps: with ps; [
-            glibc
-	    curl
-            zlib
-            gtk3
-            glib
-            gtkmm3
-            glibmm
-            glibcLocales
-            cairo
-            cairomm
-            gdk-pixbuf
-            glew
-            glfw
-            gmp
-            libavif
-            glib-networking
-            gst_all_1.gstreamer
-            gst_all_1.gst-libav
-            gst_all_1.gst-plugins-base
-            gst_all_1.gst-plugins-bad
-            gst_all_1.gst-plugins-ugly
-            gst_all_1.gst-plugins-good
-            gtest
-            gtk3
-            hicolor-icon-theme
-            ilmbase
-            fontconfig
-            freetype
-            libpng
-            mesa
-	    mesa.drivers
-            dbus
-            at-spi2-atk
-            at-spi2-core
-            webkitgtk
             cacert
+            curl
+            glib
+            glib-networking
+            gst_all_1.gst-plugins-bad
+            gst_all_1.gst-plugins-base
+            gst_all_1.gst-plugins-good
+            webkitgtk
           ];
 #	  system.replaceRuntimeDependencies = [
 #            ({ original = pkgs.mesa; replacement = unstable.mesa; })
