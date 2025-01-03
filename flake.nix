@@ -21,7 +21,7 @@
           src = pkgs.fetchurl {
             url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0/OrcaSlicer_Linux_V2.2.0.AppImage";
             #sha256 = "sha256-h+cHWhrp894KEbb3ic2N4fNTn13WlOSYoMsaof0RvRI="; # Replace with actual hash
-            sha256 = "sha256-3uqA3PXTrrOE0l8ziRAtmQ07gBFB+1Zx3S6JhmOPrZ8="; # Replace with actual hash
+            sha256 = "sha256-17xdixiqd29fvmqmdys12603n3cr5l88jcszsa2b7bnkypf81sny"; # Replace with actual hash
           };
 
           extraPkgs = ps: with ps; [
