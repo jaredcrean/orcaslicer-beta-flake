@@ -18,6 +18,7 @@
       packages = {
         x86_64-linux = pkgs.appimageTools.wrapType2 {
           name = "orca-slicer";
+	  pname = "orca-slicer";
 	  version = "v2.2.0";
           src = pkgs.fetchurl {
             url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v2.2.0/OrcaSlicer_Linux_V2.2.0.AppImage";
